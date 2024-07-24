@@ -1,0 +1,4 @@
+easy
+-----
+01 (easy)-> two sum problem.
+02 (easy)-> find largest sub arr sum
