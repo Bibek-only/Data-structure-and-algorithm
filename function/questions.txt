@@ -1,0 +1,6 @@
+01-> find factorial
+02-> find binomial cofficient
+03-> find prime in range
+04-> convert binary to decimal
+05-> decimal to binary
+06-> find palindrom or not
