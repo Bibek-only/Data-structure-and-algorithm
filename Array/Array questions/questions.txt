@@ -1,4 +1,5 @@
-easy
------
-01 (easy)-> two sum problem.
-02 (easy)-> find largest sub arr sum
+_01twoSumProblem
+_02findLargestSubArrSum
+_03findLargestSubArrLen
+_04findSecondLargestInarr
+_05arrIsSorted

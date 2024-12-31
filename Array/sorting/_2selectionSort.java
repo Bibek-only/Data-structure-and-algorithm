@@ -1,6 +1,6 @@
 // in the selecton sort we find the smallest element in the entire arr and put the element in the front of the arr
 
-public class _02selectionSort {
+public class _2selectionSort {
     public static void selectionSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             int smallest = i;

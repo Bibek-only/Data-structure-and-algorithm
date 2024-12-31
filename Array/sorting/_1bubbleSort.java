@@ -1,6 +1,6 @@
 // in bubble sort we comparer each node or index with its adjacent index and doen swaping between them according to the condition
 
-public class _01bubbleSort{
+public class _1bubbleSort{
     // function that sort the arr into assending order using bubbel sort technique
     public static void boobleSort(int[] arr){
         for(int i = 0; i<arr.length-1; i++){
