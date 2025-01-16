@@ -25,7 +25,7 @@ public class _17removeCycleFromLinkedList {
 
         boolean isCycle = false;
 
-        //step1 detect he loop
+        //step1 detect the loop
 
         while(fast != null && fast.next != null){
             slow = slow.next;
@@ -38,10 +38,15 @@ public class _17removeCycleFromLinkedList {
 
             fast = fast.next.next;
             if(slow == fast){
-                
-                break; //find that we hvae and loop in out linked list
+                isCycle = true;
+                break; //find that we hvae an loop in our linked list
             }
 
+        }
+
+        if(!isCycle){
+            System.out.println("No loop in the  linked list is present");
+            return;
         }
 
         //stpe 2 reinitialize the slow and find the node which cousing the cycle
