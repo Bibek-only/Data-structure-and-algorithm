@@ -4,4 +4,5 @@ _03fibonacciSeriesUsingRecursion
 _04findfirstOccurance
 _05find last occurance of an element in an array
 _06 find power 
-_07tile place problem (sradha khapra)
+_07 tile place problem 
+_08 friend pairing problem

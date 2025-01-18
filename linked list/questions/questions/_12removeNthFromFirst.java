@@ -22,10 +22,9 @@ public class _12removeNthFromFirst {
             }
 
             if(nodePosition == 0 ){
-                Node tempNode = head.next;
-                head.next = null; 
-                head = tempNode;
-                return;
+                Node temp = head;
+                head = head.next;
+                temp.next = null;
             }
 
              Node prevNode = head;

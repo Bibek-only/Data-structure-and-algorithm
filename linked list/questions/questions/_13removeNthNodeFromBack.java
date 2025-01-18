@@ -97,9 +97,12 @@ public class _13removeNthNodeFromBack {
         ll.addLast(3);
         ll.addLast(4);
         ll.addLast(5);
+        
 
+        System.out.println("before remove the node form linked list");
         ll.printLL();
-        ll.removeNthFromback(6);
+        ll.removeNthFromback(1);
+        System.out.println("after remove the node form linked list");
         ll.printLL();
     }
 }

@@ -16,6 +16,7 @@ public class _08removeDuplicateFromString {
         StringBuilder sb = new StringBuilder(""); //empty string builder
 
         for(int i = 0; i<str.length(); i++){
+            
             int index = (int)str.charAt(i) - 'a'; //find the currenter characte's map position
 
             if(arr[index] == false){ //check if the character is first occured in the map or not

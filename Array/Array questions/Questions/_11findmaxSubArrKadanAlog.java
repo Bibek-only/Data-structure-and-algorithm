@@ -1,6 +1,6 @@
 /*
  * in kadarns algorithem we use a simple trick find the max sub arr sum
- * step 1-> dife 2 variable maxsum and current sum
+ * step 1-> define 2 variable maxsum and current sum
  * step 2-> iterate the arr
  * step 3-> at each iteration find the current sum by adding the arr element
  * step 4-> check in ever iteration if the maxsum < currentsum then assign the currentsum to max sum
