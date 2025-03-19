@@ -2,14 +2,12 @@ public class _02bubbleSort {
 
     public static void bubbleSort(int arr[]){
 
-        for(int i = 0; i<arr.length-1; i++){
-
-            for(int j = i+1; j<arr.length; j++){ //do the continues swaping
-
-                if(arr[i] > arr[j]){ //do the check
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        for(int i=0; i<arr.length-1; i++){
+            for(int j = 0; j<arr.length-i-1; j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1]; 
+                    arr[j+1] = temp;
                 }
             }
         }
@@ -25,7 +23,8 @@ public class _02bubbleSort {
         System.out.println();
     }
     public static void main(String[] args) {
-        int arr[] ={10,20,3,54,95,16,57,28,59};
+        int arr[] ={1,2,4,3,6,5,8,7,9};
+        printArr(arr);
         bubbleSort(arr);
         printArr(arr);
     }
