@@ -1,5 +1,5 @@
 import java.util.Stack;
-public class _07stocksSpan{
+class solution{
     public static void findSpan(int stocks[], int span[]){
        Stack<Integer> st = new Stack<>();
        span[0] = 1;
