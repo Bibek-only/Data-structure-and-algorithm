@@ -56,7 +56,7 @@ class DoubleLinkedList {
     }
 
     // function to remove lastNode and return the Node
-    public Node removeLastNode() {
+    public Node removeLast() {
         if (length == 0) {
             return null;
         }
@@ -71,5 +71,86 @@ class DoubleLinkedList {
         length--;
         return temp;
 
+    }
+
+    public Node removeFirst() { // function to do the removefirst from a double linked list
+        if (length == 0) {
+            return null;
+        }
+        Node removedNode = head;
+        if (length == 1) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+            removedNode.next = null;
+        }
+        length--;
+        return removedNode;
+    }
+
+    public Node get(int index) { // this function take an index of a node and return the corresponding node
+                                 
+        if (index < 0 || index >= length) {
+            return null;
+        } else {
+            Node targetNode = head;
+            for (int i = 0; i < index; i++) {
+                targetNode = targetNode.next;
+            }
+            return targetNode;
+        }
+    }
+
+    public boolean set(int index, int data) { // this function get a value and index of node and update the value of the
+                                              // given node
+        Node toUpdateNode = get(index);
+        if (toUpdateNode == null) {
+            return false;
+        } else {
+            toUpdateNode.data = data;
+            return true;
+        }
+    }
+
+    public boolean insert(int index, int data) {
+        if (index < 0 || index > length) {
+            return false;
+        } else if (index == 0) {
+            prepend(data);
+            return true;
+        } else if (index == length) {
+            append(data);
+            return true;
+        } else {
+            Node newNode = new Node(data);
+            Node before = get(index - 1);
+            Node after = before.next;
+            before.next = newNode;
+            after.prev = newNode;
+            newNode.next = after;
+            newNode.prev = before;
+            length++;
+            return true;
+        }
+    }
+
+    public Node remove(int index) { // this funciton take a index of a node and remove the node from the list
+        if (index < 0 || index >= length) {
+            return null;
+        } else if (index == 0) {
+            return removeFirst();
+        } else if (index == length - 1) {
+            return removeLast();
+        } else {
+            Node removedNode = get(index);
+            Node before = removedNode.prev;
+            Node after = removedNode.next;
+            before.next = after;
+            after.prev = before;
+            removedNode.next = removedNode.prev = null;
+            length--;
+            return removedNode;
+        }
     }
 }
