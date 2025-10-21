@@ -34,6 +34,22 @@ public class HashTable{
         }
 
     }
+
+    public int get(String key){ // this method is find the value of a key in the hash table
+
+        int hash = generateHash(key);
+        Node temp = dataMap[hash];
+
+        while(temp != null){
+            if(temp.key == key){
+                return temp.value;
+            }else{
+                temp = temp.next;
+            }
+        }
+        return 0;
+
+    }
     public int generateHash(String key){ // this method take a key and generate an unique index 0-7 which is hash and return it
         int hash = 0;
         char charArr[] = key.toCharArray();
