@@ -35,7 +35,7 @@ class solution {
         PrintMethods pm = new PrintMethods();
         int[] array = { 1, 2, 3, 4, 5 ,5, 4};
         ArrayList<Integer>  duplicates = findDuplicates(array);
-        pm.printArrayList(duplicates);
+        pm.printIntArrayList(duplicates);
 
         
         
