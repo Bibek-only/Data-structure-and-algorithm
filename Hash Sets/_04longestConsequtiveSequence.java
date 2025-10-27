@@ -20,15 +20,11 @@ class solution {
                                        // the preveous value shoul not exits , if exits then skip the element
                 int currentSterk = 0; // capture the currentStrek of an seqence
                 int currentValue = n; // used to find the next sequence value
-                while (true) { // this loop find the next element present in a sequence or not
-                    if (!hs.contains(currentValue)) { // check the next element of a sequect presen or not if not then
-                                                      // stop
-                        break;
-                    } else { // if present then update the curent value to next value of it, and the current
-                             // sequece by one
+                while (hs.contains(currentValue)) { // this loop find the next element present in a sequence or not
+                    
                         currentValue++;
                         currentSterk++;
-                    }
+                    
                 }
 
                 longestStrek = Math.max(currentSterk, longestStrek); // update the longestSequence
@@ -39,7 +35,7 @@ class solution {
     }
 
     public static void main(String[] args) {
-        int array[] = { 100, 4, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 1, 3, 2 };
+        int array[] = { 100, 4, 1, 3, 2 };
         int longestCongecutiveSequence = findLongestConsecutiveSequnce(array);
         System.out.println(longestCongecutiveSequence);
     }
