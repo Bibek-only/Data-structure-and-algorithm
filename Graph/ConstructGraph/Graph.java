@@ -32,6 +32,20 @@ public class Graph {
         }
     }
 
+    //remove edge
+    public boolean removeEdge(String vertex1, String vertex2){
+        if(graph.get(vertex1) !=  null && graph.get(vertex2) !=null){
+            ArrayList<String> list1 = graph.get(vertex1); //get the first vertex edges(connected vertexs)
+            list1.remove(vertex2); //remove the edge or connected second verrex
+
+            ArrayList<String> list2 = graph.get(vertex2); //get the second vertex edges(connected vetexs)
+            list2.remove(vertex1); //remove the edge or connected first vertex
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public void printGraph() { //print the list, which store the vertex and the edges , or connected vertex's
         System.out.println("{");
         for (Map.Entry<String, ArrayList<String>> map : graph.entrySet()) {
