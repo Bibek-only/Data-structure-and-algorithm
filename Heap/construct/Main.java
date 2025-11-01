@@ -1,20 +1,22 @@
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Heap myHeap = new Heap();
+        ArrayList<Integer> mylist;
 
-        myHeap.insert(99);
-        myHeap.insert(72);
-        myHeap.insert(61);
-        myHeap.insert(58);
+        myHeap.insert(95);
+        myHeap.insert(75);
+        myHeap.insert(80);
         myHeap.insert(55);
-        myHeap.insert(27);
-        myHeap.insert(18);
-
-        ArrayList<Integer> newHeap = myHeap.getHeap();
-        System.out.println(newHeap); 
-        myHeap.insert(100);
-        newHeap = myHeap.getHeap();
-        System.out.println(newHeap);
+        myHeap.insert(60);
+        myHeap.insert(50);
+        myHeap.insert(65);
+        // myHeap.insert(100);
+        mylist = myHeap.getHeap();
+        System.out.println(mylist);
+        myHeap.remove();
+        mylist = myHeap.getHeap();
+        System.out.println(mylist);
     }
 }

@@ -37,6 +37,31 @@ public class Heap {
         heap.set(node2Index, temp); // in the place of the second index put the second index value
     }
 
+    // shrink down , here we have to shrink down the top most node to ts appopriate
+    // postion
+    private void shrinkdown(int index) {
+        int maxIndex = index;
+        while (true) {
+
+            int leftIndex = getLeftChildIndex(maxIndex);
+            int rightIndex = getRightChildIndex(maxIndex);
+            // check the max index value witht its left child, also check is the left child
+            // is a valid child or not
+            if (leftIndex < heap.size() && heap.get(leftIndex) > heap.get(maxIndex)) {
+                maxIndex = leftIndex;
+            }
+            if (rightIndex < heap.size() && heap.get(rightIndex) > heap.get(maxIndex)) {
+                maxIndex = rightIndex;
+            }
+            if (maxIndex != index) {
+                swap(index, maxIndex);
+                index = maxIndex;
+            } else {
+                return;
+            }
+        }
+    }
+
     // insert an node in the heap
 
     public void insert(int value) {
@@ -63,6 +88,28 @@ public class Heap {
             currIndex = getParentIndex(currIndex);
         }
 
+    }
+
+    //remove node, here wer remove the top most node and we don't 
+    public Integer remove(){
+        if(heap.size() == 0){
+            return null;
+        }
+        else if(heap.size() == 1){
+            return heap.remove(0);
+        }else{
+            //first store the top most element for reutrn
+            int removedVariable = heap.get(0);
+
+            //now to make it a balance tree  set the right most node as top mostnot
+            heap.set(0,heap.remove(heap.size()-1));
+
+            //now shrink down the new top most node to its appopriate position
+            shrinkdown(0);
+
+            return removedVariable;
+            
+        }
     }
 
 }
