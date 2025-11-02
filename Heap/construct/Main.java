@@ -1,3 +1,4 @@
+package construct;
 import java.util.*;
 
 public class Main {
@@ -15,6 +16,8 @@ public class Main {
         // myHeap.insert(100);
         mylist = myHeap.getHeap();
         System.out.println(mylist);
+        myHeap.remove();
+        mylist = myHeap.getHeap();
         myHeap.remove();
         mylist = myHeap.getHeap();
         System.out.println(mylist);

@@ -1,3 +1,4 @@
+package construct;
 import java.util.*;
 
 public class Heap {
@@ -46,7 +47,7 @@ public class Heap {
             int leftIndex = getLeftChildIndex(maxIndex);
             int rightIndex = getRightChildIndex(maxIndex);
             // check the max index value witht its left child, also check is the left child
-            // is a valid child or not
+            // is a valid index or not child or not
             if (leftIndex < heap.size() && heap.get(leftIndex) > heap.get(maxIndex)) {
                 maxIndex = leftIndex;
             }
