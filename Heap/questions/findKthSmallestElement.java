@@ -3,7 +3,7 @@ package questions;
 import java.util.ArrayList;
 import construct.Heap;
 
-class solution {
+class findKthSmallestElement {
     public static Integer findKthSmallElement(int arr[], int k) {
 
         Heap maxHeap = new Heap();
