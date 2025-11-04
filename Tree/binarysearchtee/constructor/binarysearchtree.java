@@ -48,5 +48,18 @@ public class binarysearchtree {
         }
         
     }
-    
+    public boolean isContains(int value){
+        if(root == null) return false; //if there is node then reutrn
+        Node temp = root;
+        while(true){
+            if(temp == null) return false; //return if the temp is null, means ther is no value
+            if(temp.value == value) return true; //return true if the value we found
+            if(temp.value > value){ //traverse the left of the tree
+                temp = temp.left;
+            }else{
+                temp = temp.right; //traverse the right
+            }
+
+        }
+    }
 }
