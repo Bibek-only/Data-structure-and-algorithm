@@ -58,7 +58,7 @@ public class binarysearchtree {
         }
     }
 
-    public void rinserti(int value) { //inefficent method
+    public void rinserti(int value) { // inefficent method
         if (root == null) {
 
             root = new Node(value);
@@ -68,7 +68,7 @@ public class binarysearchtree {
         }
     }
 
-    private void rinserti(Node temp, int value) { //inefficient method to implemet recursion
+    private void rinserti(Node temp, int value) { // inefficient method to implemet recursion
         if (temp.value == value)
             return;
         if (value < temp.value) {
@@ -88,18 +88,25 @@ public class binarysearchtree {
         }
     }
 
-    private Node rinserte(Node currNode, int value){ ///effecient way to implement recursion insertion int bst
-        if(currNode == null) return new Node(value);// checks we reach the last node or not
-        if(value < currNode.value){ //recusive call to the left tree
+    private Node rinserte(Node currNode, int value) { /// effecient way to implement recursion insertion int bst
+        if (currNode == null)
+            return new Node(value);// checks we reach the last node or not
+        if (value < currNode.value) { // recusive call to the left tree
             currNode.left = rinserte(currNode.left, value);
-        }
-        else if(value > currNode.value){ //recursive call to the right tree
+        } else if (value > currNode.value) { // recursive call to the right tree
             currNode.right = rinserte(currNode.right, value);
         }
-        return currNode; //used to popout the element from the stack
+        return currNode; // used to popout the element from the stack
     }
 
-    public  void rinserte(int value){ //effecient way to implement recusion insertion in bst
-        rinserte(root, value);
+    public void rinserte(int value) { // effecient way to implement recusion insertion in bst
+        if (root == null) {
+
+            root = new Node(value);
+            return;
+        } else {
+
+            rinserte(root, value);
+        }
     }
 }
