@@ -109,4 +109,21 @@ public class binarysearchtree {
             rinserte(root, value);
         }
     }
+
+    private Node remove(Node currNode, int value){
+        if(currNode == null){
+            return null;
+        }
+        if(value < currNode.value){
+            currNode.left = remove(currNode.left, value);
+        }else if(value > currNode.value){
+            currNode.right = remove(currNode.right, value);
+        }
+
+        return currNode;
+    }
+
+    public void remove(int value){
+        remove(root, value);
+    }
 }

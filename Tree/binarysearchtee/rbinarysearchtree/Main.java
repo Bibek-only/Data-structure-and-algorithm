@@ -13,6 +13,9 @@ public class Main {
         tree.rinserte(22); //efficient recursinve insert
 
         boolean isContains = tree.contains(22);
+        //remove the 23 which is not present in the tree
+
+        tree.remove(23);
         System.out.println(isContains);
     }
 
