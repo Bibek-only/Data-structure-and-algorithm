@@ -114,10 +114,16 @@ public class binarysearchtree {
         if(currNode == null){
             return null;
         }
-        if(value < currNode.value){
+        if(value < currNode.value){ //travese the left sub tree for removeal
             currNode.left = remove(currNode.left, value);
         }else if(value > currNode.value){
-            currNode.right = remove(currNode.right, value);
+            currNode.right = remove(currNode.right, value); //traverse the right subtree for traversal
+        }else{ //we reach the node which we want to remove
+
+            // code for remove the leaf node
+             if(currNode.left == null && currNode.right == null){
+                return null;
+             }
         }
 
         return currNode;
