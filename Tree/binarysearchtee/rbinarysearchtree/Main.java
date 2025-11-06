@@ -14,6 +14,8 @@ public class Main {
 
         boolean isContains = tree.contains(22);
         System.out.println("is the 22 is inserted in the tree: "+isContains);
+
+        System.out.println(tree.getMinimumValue());
         
         //remove the 23 which is not present in the tree
         tree.remove(23);

@@ -132,4 +132,17 @@ public class binarysearchtree {
     public void remove(int value){
         remove(root, value);
     }
+
+    private int getMinimumValue(Node currNode){
+        
+        if(currNode.left == null){
+            return currNode.value;
+        }else{
+            return getMinimumValue(currNode.left);
+        }
+    }
+
+    public int getMinimumValue(){
+        return getMinimumValue(root);
+    }
 }
