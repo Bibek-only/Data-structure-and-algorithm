@@ -110,39 +110,52 @@ public class binarysearchtree {
         }
     }
 
-    private Node remove(Node currNode, int value){
-        if(currNode == null){
+    private int getMinimumValue(Node currNode) {
+
+        if (currNode.left == null) {
+            return currNode.value;
+        } else {
+            return getMinimumValue(currNode.left);
+        }
+    }
+
+    private Node remove(Node currNode, int value) {
+        if (currNode == null) {
             return null;
         }
-        if(value < currNode.value){ //travese the left sub tree for removeal
+        if (value < currNode.value) { // travese the left sub tree for removeal
             currNode.left = remove(currNode.left, value);
-        }else if(value > currNode.value){
-            currNode.right = remove(currNode.right, value); //traverse the right subtree for traversal
-        }else{ //we reach the node which we want to remove
+        } else if (value > currNode.value) {
+            currNode.right = remove(currNode.right, value); // traverse the right subtree for traversal
+        } else { // we reach the node which we want to remove
 
             // code for remove the leaf node
-             if(currNode.left == null && currNode.right == null){
+            if (currNode.left == null && currNode.right == null) {
                 return null;
-             }
+            } else if (currNode.right == null) { // code to delet the node if we have only left subtree of that
+                                                 // node(node to be remove)
+                currNode = currNode.left;
+            } else if (currNode.left == null) { // code to delet the node if we have only right subtree of that
+                                                // node(node to be remove)
+                currNode = currNode.right;
+            } else { // code to delet the node if we have both the left and right sub tree
+                     // 1. get the minimum valu of the right sub tree
+                int min = getMinimumValue(currNode.right);
+                // 2. set the right sub trees min value to the current value
+                currNode.value = min;
+                // 3. remove the duplicate or the min value of the right sub tree of the current
+                // node
+                currNode.right = remove(currNode.right, min);
+            }
         }
 
         return currNode;
     }
 
-    public void remove(int value){
+    public void remove(int value) {
         remove(root, value);
     }
 
-    private int getMinimumValue(Node currNode){
-        
-        if(currNode.left == null){
-            return currNode.value;
-        }else{
-            return getMinimumValue(currNode.left);
-        }
-    }
+    //
 
-    public int getMinimumValue(){
-        return getMinimumValue(root);
-    }
 }

@@ -8,6 +8,8 @@ public class Main {
         tree.insert(2);
         tree.insert(5);
         tree.insert(1);
+        tree.insert(0);
+
 
         tree.rinserti(11); // inefficient recursive insert
         tree.rinserte(22); //efficient recursinve insert
@@ -15,7 +17,7 @@ public class Main {
         boolean isContains = tree.contains(22);
         System.out.println("is the 22 is inserted in the tree: "+isContains);
 
-        System.out.println(tree.getMinimumValue());
+        
         
         //remove the 23 which is not present in the tree
         tree.remove(23);
@@ -26,6 +28,10 @@ public class Main {
         tree.remove(22);
         tree.remove(1);
         System.out.println("values 1 and 22 is contain after remove: "+tree.contains(1)+" , "+tree.contains(22));
+
+        System.out.println("root 3 is present before remove: "+tree.contains(3));
+        tree.remove(3);
+        System.out.println("root 3 is present after remove: "+tree.contains(3));
         
         
     }
