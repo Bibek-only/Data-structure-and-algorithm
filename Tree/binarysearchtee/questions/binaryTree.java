@@ -1,11 +1,12 @@
 package questions;
 
 public class binaryTree {
-    class Node{
+    class Node {
         int value;
         Node left;
         Node right;
-        public Node(int value){
+
+        public Node(int value) {
             this.value = value;
             this.left = null;
             this.right = null;
@@ -14,34 +15,37 @@ public class binaryTree {
 
     private Node root;
 
-    private boolean isContains(Node currNode,int value){
-        if(currNode == null) return false;
-        if(currNode.value == value) return true;
-        if(value<currNode.value){ //travel left
-            return isContains(currNode.left,value);
-        }else{ //travel right
-            return isContains(currNode.right,value);
+    private boolean isContains(Node currNode, int value) {
+        if (currNode == null)
+            return false;
+        if (currNode.value == value)
+            return true;
+        if (value < currNode.value) { // travel left
+            return isContains(currNode.left, value);
+        } else { // travel right
+            return isContains(currNode.right, value);
         }
-        
-        
+
     }
 
-    private Node insert(Node currNode, int value){
-        if(currNode == null) return new Node(value);
-        if(currNode.value == value) return null;
-        if(value<currNode.value){
-            currNode.left = insert(currNode.left, value);
+    private Node convertSortedArrayToBalancedBst(int arr[], int si, int ei) { // function to conver the sorted array to
+                                                                              // bst
+        if (si > ei) { // check ther si any noder present or not
+            return null;
         }
-        else if(value > currNode.value){
-            currNode.right = insert(currNode.right,value);
-        }
-        return currNode;
+        int mid = si + (ei - si) / 2; // find the current root(value) ned to construct
+        Node currentRoot = new Node(arr[mid]); // creat the current root
+        currentRoot.left = convertSortedArrayToBalancedBst(arr, si, mid - 1); // construct the left sub tree
+        currentRoot.right = convertSortedArrayToBalancedBst(arr, mid + 1, ei); // construct the right sub tree
+        return currentRoot; // reutn the root
     }
-    public void insert(int value){
-        if(root == null) root = new Node(value);
-        insert(root,value);
+
+    public void convertSortedArrayToBalancedBst(int arr[]) {
+        root = convertSortedArrayToBalancedBst(arr, 0, arr.length - 1);
     }
-    public boolean isContains(int value){
-        return isContains(root,value);
+
+    public boolean isContains(int value) {
+        return isContains(root, value);
     }
+
 }
