@@ -48,4 +48,38 @@ public class binaryTree {
         return isContains(root, value);
     }
 
+    private Node insert(Node currNode, int value) {
+        if (currNode == null) {
+            return new Node(value);
+        }
+        if (value < currNode.value) {
+            currNode.left = insert(currNode.left, value);
+        } else if (value > currNode.value) {
+            currNode.right = insert(currNode.right, value);
+        }
+        return currNode;
+    }
+
+    public void insert(int value) {
+        if (root == null) {
+            root = new Node(value);
+        } else {
+            insert(root, value);
+        }
+    }
+
+    private Node mirror(Node currNode){
+        if(currNode == null){
+            return null;
+        }
+        Node temp = currNode.left;
+        currNode.left = mirror(currNode.right);
+        currNode.right = mirror(temp);
+
+        return currNode;
+    }
+
+    public void mirror(){
+        mirror(root);
+    }
 }
