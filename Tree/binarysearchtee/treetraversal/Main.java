@@ -21,5 +21,10 @@ public class Main {
         System.out.println("deapth first search pre order");
         ArrayList<Integer> dfspreorder = tree.preOrderTreeTraversal();
         System.out.println(dfspreorder);
+
+        System.out.println();
+        System.out.println("depth first search post order");
+        ArrayList<Integer> dfspostOrder = tree.postOrderTreeTraverSal();
+        System.out.println(dfspostOrder);
     }
 }

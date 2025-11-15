@@ -75,4 +75,20 @@ public class binaryTree {
         return list;
     }
     
+    public ArrayList<Integer> postOrderTreeTraverSal(){ //defth first search post order
+        ArrayList<Integer> list  = new ArrayList<>();
+        class PostTraverse{
+            public PostTraverse(Node currNode){
+                if(currNode.left != null){ // travel the left sub tree
+                    new PostTraverse(currNode.left);
+                }
+                if(currNode.right != null){ //travel the right sub tree
+                    new PostTraverse(currNode.right);
+                }
+                list.add(currNode.data); // after travel the left and the right nodes, add the node in the list
+            }
+        }
+        new PostTraverse(root);
+        return list;
+    }
 }
