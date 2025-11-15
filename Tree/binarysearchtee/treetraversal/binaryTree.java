@@ -56,5 +56,23 @@ public class binaryTree {
 
 
     }
+
+    public  ArrayList<Integer> preOrderTreeTraversal(){ // defth first search pre order
+        ArrayList<Integer> list = new ArrayList<>();
+
+        class POTT{ //class for declareing of  preorder tree traversal function
+            public POTT(Node currNode){
+                list.add(currNode.data);
+                if(currNode.left != null){ //traverse th left subtree
+                    new POTT(currNode.left);
+                }   
+                if(currNode.right != null){ // traverse the right subtree
+                    new POTT(currNode.right);
+                }
+            }
+        }
+        new POTT(root);
+        return list;
+    }
     
 }
