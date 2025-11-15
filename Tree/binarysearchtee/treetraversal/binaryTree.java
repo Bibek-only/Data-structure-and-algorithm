@@ -91,4 +91,20 @@ public class binaryTree {
         new PostTraverse(root);
         return list;
     }
+    public ArrayList<Integer> inOrderTreeTraversal(){
+        ArrayList<Integer> list = new ArrayList<>();
+        class InorderTraverse{ //class for define the recursive class
+            public InorderTraverse(Node currNode){ //recursion function
+                if(currNode.left != null){ //traverse the left nodes or sub tree if available
+                    new InorderTraverse(currNode.left); 
+                }
+                list.add(currNode.data); //after visiting the left sub tree and nodes put it in the nodes
+                if(currNode.right != null){ //traverse the right nodes or sub tree if available
+                    new InorderTraverse(currNode.right);
+                }
+            }
+        }
+        new InorderTraverse(root);
+        return list;
+    }
 }
