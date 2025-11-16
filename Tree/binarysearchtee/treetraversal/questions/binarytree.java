@@ -62,4 +62,21 @@ public class binarytree {
         new INOT(root);
         return list;
     }
+
+    public boolean validateBinaryTree(){
+        ArrayList<Integer> list = inOrderTraversal(); //get the tree as a sorted list using inorder traversal
+
+        int len = list.size();
+        int i = 0;
+        int j = 1;
+        while(j<len){
+            if(list.get(i)>list.get(j)){ //check the next element of an element is small or not if yes means it not a valid tre return false
+                return false;
+            }
+            i++;
+            j++;
+        }
+        return true;
+
+    }
 }
