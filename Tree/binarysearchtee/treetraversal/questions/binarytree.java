@@ -79,4 +79,25 @@ public class binarytree {
         return true;
 
     }
+
+    public Integer findKthSmallest(int k){
+        Stack<Node> st = new Stack<>();
+        Node currNode = root;
+        while(currNode!=null || !st.empty()){
+            //go to the left most
+            while(currNode != null){
+                st.push(currNode);
+                currNode = currNode.left;
+            }
+
+            //pop the stack and reduce the k
+            currNode = st.pop();
+            k--;
+            if(k == 0){
+                return currNode.data;
+            }
+            currNode = currNode.right;
+        }
+        return null;
+    }
 }
