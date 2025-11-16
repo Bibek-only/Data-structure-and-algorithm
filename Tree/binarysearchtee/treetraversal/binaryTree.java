@@ -34,7 +34,7 @@ public class binaryTree {
         return currNode;
     }
     
-    public ArrayList<Integer> BFS(){
+    public ArrayList<Integer> BFS(){ 
         Node currNode = root; // initialize the currNode to start the operation.
 
         Queue<Node> queue = new LinkedList<>(); //define to track which value store in level wise in the list(bfs result)
