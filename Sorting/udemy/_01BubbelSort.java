@@ -1,4 +1,8 @@
+// in bubble sort we bubble up the large element to the last of the array
+
 import java.util.*;
+
+
 
 class solution{
     public static void main(String args[]){
