@@ -4,11 +4,9 @@ class solution{
         int maxSubArrSum = Integer.MIN_VALUE;
 
         for(int i = 0; i<len; i++){
+            int currentSubArrSum = 0;
             for(int j = i; j<len; j++){
-                int currentSubArrSum = 0;
-                for(int k = i; k<=j; k++){
-                    currentSubArrSum += nums[k];
-                }
+                currentSubArrSum += nums[j];
                 if(currentSubArrSum > maxSubArrSum){
                     maxSubArrSum = currentSubArrSum;
                 }
